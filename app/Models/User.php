@@ -14,7 +14,10 @@ class User extends Authenticatable
     protected $primaryKey = 'IDUser'; // ganti jika kamu pakai IDUser sebagai PK
 
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'role',
+        'username',
+        'password',
+        'name',
+        'role',
     ];
 
     protected $hidden = [
