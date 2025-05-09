@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class AdminUserSeeder extends Seeder
+class AdminUSerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,11 +15,33 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'username' => 'adminMPP@mpp.com',
-            'email'=> 'adminMPP@mpp.com',
-            'password' => Hash::make('AdminMPP567'), // ganti dengan password yang kamu mau
-            'name'     => 'Admin MPP',
-            'role'     => 'mpp',
+            [
+                'username' => 'Dinas Kesehatan',
+                'email'=> 'adminDinkes@mpp.com',
+                'password' => Hash::make('AdminDinkes567'),
+                'name' => 'Admin Dinkes',
+                'role' => 'instansi',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'username' => 'Dinas Pendidikan',
+                'email'=> 'adminDisdik@mpp.com',
+                'password' => Hash::make('AdminDisdik567'),
+                'name' => 'Admin Disdik',
+                'role' => 'instansi',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'username' => 'Dinas Perhubungan',
+                'email'=> 'adminDishub@mpp.com',
+                'password' => Hash::make('AdminDishub567'),
+                'name' => 'Admin Perhubungan',
+                'role' => 'instansi',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ]);
     }
 }
