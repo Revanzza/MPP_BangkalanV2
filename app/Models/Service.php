@@ -12,7 +12,7 @@ class Service extends Model
     protected $primaryKey = 'IDService';
 
     protected $fillable = ['IDInstitution', 'nama_layanan', 'deskripsi', 'persyaratan', 'alur'];
-
+  
     public function institution()
     {
         return $this->belongsTo(Institution::class, 'IDInstitution');
