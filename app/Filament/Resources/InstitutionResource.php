@@ -38,13 +38,18 @@ class InstitutionResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('logo_institution'),
+                Tables\Columns\TextColumn::make('nama_institution'),
+                Tables\Columns\TextColumn::make('alamat_institution'),
+                Tables\Columns\TextColumn::make('website_institution'),
+                Tables\Columns\TextColumn::make('no_institution'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
