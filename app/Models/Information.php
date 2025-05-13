@@ -9,12 +9,18 @@ class Information extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'IDInformation';
+    protected $table = 'information';
 
-    protected $fillable = ['IDUser', 'judul', 'isi', 'gambar', 'kategori'];
+    protected $fillable = [
+        'id_user',
+        'judul',
+        'isi',
+        'foto_information',
+        'kategori',
+    ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'IDUser');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

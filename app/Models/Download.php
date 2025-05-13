@@ -9,12 +9,10 @@ class Download extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'IDDownload';
-
-    protected $fillable = ['judul', 'file_path', 'keterangan', 'IDUser'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'IDUser');
-    }
+    protected $fillable = [
+        'judul',
+        'file_path',
+        'keterangan',
+    ];
 }
+
