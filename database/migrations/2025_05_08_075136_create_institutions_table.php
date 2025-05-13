@@ -12,14 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('institutions', function (Blueprint $table) {
-            $table->id('IDInstitution');
+            $table->id();
             $table->string('nama_institution');
-            $table->string('alamat_institution');
+            $table->text('alamat_institution');
             $table->string('website_institution')->nullable();
             $table->string('logo_institution')->nullable();
-            $table->string('no_institution')->nullable();
-            $table->unsignedBigInteger('IDUser');
-            $table->foreign('IDUser')->references('IDUser')->on('users')->onDelete('cascade');
+            $table->string('no_institution');
             $table->timestamps();
         });
     }

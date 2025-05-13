@@ -9,12 +9,17 @@ class Agenda extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'IDAgenda';
-
-    protected $fillable = ['nama_agenda', 'deskripsi', 'waktu', 'tempat', 'IDUser'];
+    protected $fillable = [
+        'nama_agenda',
+        'deskripsi',
+        'waktu_pelaksanaan',
+        'tempat',
+        'foto_agenda',
+        'id_user',
+    ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'IDUser');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

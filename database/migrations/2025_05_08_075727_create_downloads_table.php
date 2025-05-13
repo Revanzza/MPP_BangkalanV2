@@ -12,13 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('downloads', function (Blueprint $table) {
-            $table->id('IDDownload');
+            $table->id();
             $table->string('judul');
             $table->string('file_path');
             $table->text('keterangan')->nullable();
-            $table->unsignedBigInteger('IDUser');
-            $table->foreign('IDUser')->references('IDUser')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamps(); // created_at dan updated_at
         });
     }
 

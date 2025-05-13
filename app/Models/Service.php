@@ -10,12 +10,23 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'IDService';
-
-    protected $fillable = ['IDInstitution', 'nama_layanan', 'deskripsi', 'persyaratan', 'alur'];
+    protected $fillable = [
+        'id_institution',
+        'nama_layanan',
+    ];
 
     public function institution()
     {
-        return $this->belongsTo(Institution::class, 'IDInstitution');
+        return $this->belongsTo(Institution::class, 'id_institution');
+    }
+
+    public function persyaratan()
+    {
+        return $this->hasMany(Persyaratan::class, 'id_service');
+    }
+
+    public function mekanisme()
+    {
+        return $this->hasMany(Mekanisme::class, 'id_service');
     }
 }

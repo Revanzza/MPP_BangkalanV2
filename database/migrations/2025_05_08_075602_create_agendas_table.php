@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agenda', function (Blueprint $table) {
-            $table->id('IDAgenda');
+        Schema::create('agendas', function (Blueprint $table) {
+            $table->id();
             $table->string('nama_agenda');
             $table->text('deskripsi');
-            $table->dateTime('waktu');
+            $table->dateTime('waktu_pelaksanaan');
             $table->string('tempat');
-            $table->unsignedBigInteger('IDUser');
-            $table->foreign('IDUser')->references('IDUser')->on('users')->onDelete('cascade');
+            $table->string('foto_agenda')->nullable();
+            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
