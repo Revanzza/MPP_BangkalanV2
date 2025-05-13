@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('website_institution')->nullable();
             $table->string('logo_institution')->nullable();
             $table->string('no_institution')->nullable();
+
             $table->timestamps();
         });
     }

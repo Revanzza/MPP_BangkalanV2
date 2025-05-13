@@ -15,3 +15,4 @@ class Download extends Model
         'keterangan',
     ];
 }
+
