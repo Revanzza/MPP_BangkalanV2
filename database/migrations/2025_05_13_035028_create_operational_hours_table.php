@@ -17,13 +17,9 @@ return new class extends Migration
             
             // Kolom utama
             $table->string('day', 10); // Nama hari (Senin, Selasa, dst)
-            $table->time('open_time')->nullable(); // Jam buka (bisa null jika tutup)
-            $table->time('close_time')->nullable(); // Jam tutup (bisa null jika tutup)
+            $table->string('open_time')->nullable(); // Jam buka (bisa null jika tutup)
+            $table->string('close_time')->nullable(); // Jam tutup (bisa null jika tutup)
             $table->boolean('is_closed')->default(false); // Status operasional
-            
-            // Kolom tambahan
-            $table->text('notes')->nullable(); // Catatan khusus
-            $table->string('timezone')->default('Asia/Jakarta'); // Timezone
             
             // Timestamps
             $table->timestamps(); // created_at dan updated_at
