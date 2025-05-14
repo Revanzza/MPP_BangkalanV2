@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Persyaratan extends Model
 {
@@ -16,5 +17,14 @@ class Persyaratan extends Model
     public function service()
     {
         return $this->belongsTo(Service::class, 'id_service');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            $model->deskripsi_persyaratan = strip_tags($model->deskripsi_persyaratan);
+        });
     }
 }
