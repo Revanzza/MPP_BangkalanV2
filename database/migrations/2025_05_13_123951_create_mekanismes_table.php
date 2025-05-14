@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('mekanismes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_service')->constrained('services')->onDelete('cascade');
+            $table->text('deskripsi_mekanisme');
             $table->timestamps();
         });
     }
