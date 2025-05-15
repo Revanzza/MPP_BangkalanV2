@@ -23,8 +23,5 @@ class Mekanisme extends Model
 {
     parent::boot();
 
-    static::saving(function ($model) {
-        $model->deskripsi_mekanisme = strip_tags($model->deskripsi_mekanisme);
-    });
 }
 }
