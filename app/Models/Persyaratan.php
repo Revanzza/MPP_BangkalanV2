@@ -23,8 +23,5 @@ class Persyaratan extends Model
     {
         parent::boot();
 
-        static::saving(function ($model) {
-            $model->deskripsi_persyaratan = strip_tags($model->deskripsi_persyaratan);
-        });
     }
 }
