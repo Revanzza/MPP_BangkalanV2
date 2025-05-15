@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_agenda');
             $table->text('deskripsi');
-            $table->dateTime('waktu_pelaksanaan');
+            $table->date('waktu_pelaksanaan');
             $table->string('tempat');
             $table->string('foto_agenda')->nullable();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');

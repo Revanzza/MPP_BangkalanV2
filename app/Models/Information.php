@@ -23,4 +23,13 @@ class Information extends Model
     {
         return $this->belongsTo(User::class, 'id_user');
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->id_user = auth()->id(); // Auto-set user yang login
+        });
+    }
 }

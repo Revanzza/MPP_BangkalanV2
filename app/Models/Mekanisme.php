@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mekanisme extends Model
 {
@@ -17,4 +18,13 @@ class Mekanisme extends Model
     {
         return $this->belongsTo(Service::class, 'id_service');
     }
+
+    protected static function boot()
+{
+    parent::boot();
+
+    static::saving(function ($model) {
+        $model->deskripsi_mekanisme = strip_tags($model->deskripsi_mekanisme);
+    });
+}
 }
