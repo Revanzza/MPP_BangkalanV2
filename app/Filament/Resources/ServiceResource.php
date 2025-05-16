@@ -116,7 +116,9 @@ class ServiceResource extends Resource
                     )
             ])
             ->filters([
-                // Tambahkan filter jika perlu
+                Tables\Filters\SelectFilter::make('id_institutions')
+                    ->relationship('institution','nama_institution')
+                    ->label('Select Institution')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
