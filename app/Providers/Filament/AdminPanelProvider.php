@@ -40,6 +40,10 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+                        // Tambahkan bagian berikut untuk mengubah brand dan logo
+            ->brandName('MPP Bangkalan')
+            ->brandLogo(asset('images/mpp-bangkalan.png')) // Pastikan file logo ada di public/images/logo-mpp.png
+            ->favicon(asset('icons/icon-mpp.ico')) // Opsional: ubah favicon juga
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
