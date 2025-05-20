@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\ProfileController;
 use App\Http\Controllers\Web\AgendaController;
 use App\Http\Controllers\Web\InformationController;
 use App\Http\Controllers\Web\ServiceController;
+use App\Http\Controllers\OperationalHoursController;
 
 Route::get('/admin-gateway', [AdminCaptchaController::class, 'showForm'])->name('admin.gateway');
 Route::post('/admin-gateway', [AdminCaptchaController::class, 'verify'])->name('admin.gateway.verify');
@@ -24,3 +25,5 @@ Route::get('/informasi/{id}', [InformationController::class, 'show'])->name('inf
 
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/layanan/{id}', [ServiceController::class, 'show'])->name('services.show');
+
+Route::get('/jam-operasional', [YourController::class, 'showOperationalHours']);

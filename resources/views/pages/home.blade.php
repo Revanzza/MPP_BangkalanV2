@@ -24,7 +24,7 @@
 <!-<!-- About MPP Section -->
 <section class="py-10 bg-blue-600">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-white">TENTANG MPP</h2>
+        <h2 class="text-4xl font-bold text-center text-white">TENTANG MPP</h2>
         
         <div class="bg-white p-6 rounded-lg mt-6 max-w-3xl mx-auto">
             <p class="text-center text-blue-600">
@@ -77,81 +77,6 @@
 </section>
 
 
-<!-- Operating Hours Section -->
-<section class="py-10">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-blue-800">JAM OPERASIONAL</h2>
-        <p class="text-gray-600">Jam Operasional tersebut bisa berubah kapanpun</p>
-        <div class="flex flex-col md:flex-row items-center mt-6">
-            <!-- Image -->
-            <div class="md:w-1/2">
-                <img src="{{ asset('storage/banners/pageJamOperasional.png') }}" alt="Operating Hours Illustration" class="w-full">
-            </div>
-            <!-- Hours -->
-            <div class="md:w-1/2 flex flex-wrap justify-center gap-4 mt-6 md:mt-0">
-                <div class="w-48 p-4 bg-white rounded shadow operating-hours-card">
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-clock"></i><span>Senin</span>
-                    </div>
-                    <p class="mb-0">08:00 - 16:00</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow operating-hours-card">
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-clock"></i><span>Selasa</span>
-                    </div>
-                    <p class="mb-0">08:00 - 16:00</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow operating-hours-card">
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-clock"></i><span>Rabu</span>
-                    </div>
-                    <p class="mb-0">08:00 - 16:00</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow operating-hours-card">
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-clock"></i><span>Kamis</span>
-                    </div>
-                    <p class="mb-0">08:00 - 16:00</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow operating-hours-card">
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-clock"></i><span>Jumat</span>
-                    </div>
-                    <p class="mb-0">08:00 - 16:00</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow border border-red-500">
-                    <div class="flex items-center gap-2 text-red-500">
-                        <i class="bi bi-clock"></i><span>Sabtu</span>
-                    </div>
-                    <p class="text-red-500">Tidak Beroperasional</p>
-                </div>
-                <div class="w-48 p-4 bg-white rounded shadow border border-red-500">
-                    <div class="flex items-center gap-2 text-red-500">
-                        <i class="bi bi-clock"></i><span>Minggu</span>
-                    </div>
-                    <p class="text-red-500">Tidak Beroperasional</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.clickable-icon').forEach(icon => {
-            icon.addEventListener('click', function () {
-                document.querySelectorAll('.clickable-icon').forEach(i => i.classList.remove('bg-yellow-400'));
-                this.classList.add('bg-yellow-400');
-            });
-        });
-
-        document.querySelectorAll('.operating-hours-card').forEach(card => {
-            card.addEventListener('click', function () {
-                document.querySelectorAll('.operating-hours-card').forEach(c => c.classList.remove('bg-blue-800', 'text-white'));
-                this.classList.add('bg-blue-800', 'text-white');
-            });
-        });
-    });
-</script>
+@include('components.operational-hours', ['hours' => $hours, 'today' => $today])
 
 @endsection
