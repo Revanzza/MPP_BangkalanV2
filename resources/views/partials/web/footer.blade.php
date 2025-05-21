@@ -1,4 +1,4 @@
-<footer class="bg-blue-700 text-white py-5">
+<footer class="bg-blue-600 text-white py-5">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col md:flex-row gap-8">
             <!-- Contact Information Section -->

@@ -30,32 +30,36 @@
                     </a>
                 </li>
                 <!-- Dropdown Menu -->
-                <li class="relative group">
-                    <button class="flex items-center text-gray-700 hover:text-blue-600 transition">
-                        PROFIL
-                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                    </button>
-                    <ul
-                        class="absolute hidden group-hover:block bg-white border rounded shadow-lg mt-2 w-56 z-50 text-left">
-                        <li><a href="{{ route('profile.vision-mission') }}"
-                               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/visi-misi') ? 'text-blue-600 font-semibold' : '' }}">Visi
-                                & Misi</a></li>
-                        <li><a class="block px-4 py-2 hover:bg-gray-100">Tugas & Fungsi</a></li>
-                        <li><a class="block px-4 py-2 hover:bg-gray-100">Profil Pimpinan</a></li>
-                        <li><a class="block px-4 py-2 hover:bg-gray-100">Daftar Pegawai</a></li>
-                        <li><a href="{{ route('profile.facilities') }}"
-                               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/fasilitas') ? 'text-blue-600 font-semibold' : '' }}">Sarana
-                                & Prasarana</a></li>
-                        <li><a class="block px-4 py-2 hover:bg-gray-100">Prestasi & Inovasi</a></li>
-                        <li><a href="{{ route('profile.legal-basis') }}"
-                               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/dasar-hukum') ? 'text-blue-600 font-semibold' : '' }}">Dasar
-                                Hukum</a></li>
-                    </ul>
-                </li>
+                <li class="relative" x-data="{ open: false }">
+    <button @click="open = !open" class="flex items-center text-gray-700 hover:text-blue-600 transition">
+        PROFIL
+        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"/>
+        </svg>
+    </button>
+    <ul
+        x-show="open"
+        @click.away="open = false"
+        x-transition
+        class="absolute bg-white border rounded shadow-lg mt-2 w-56 z-50 text-left"
+        style="display: none;">
+        <li><a href="{{ route('profile.vision-mission') }}"
+               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/visi-misi') ? 'text-blue-600 font-semibold' : '' }}">Visi & Misi</a></li>
+        <li><a href="{{ route('profile.tugas-fungsi') }}"
+                class="block px-4 py-2 hover:bg-gray-100">Tugas & Fungsi</a></li>
+        <li><a href="{{ route('profile.leadership') }}"
+                class="block px-4 py-2 hover:bg-gray-100">Profil Pimpinan</a></li>
+        <li><a href="{{ route('profile.facilities') }}"
+               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/fasilitas') ? 'text-blue-600 font-semibold' : '' }}">Sarana & Prasarana</a></li>
+        <li><a href="{{ route('profile.prestasi-inovasi') }}"
+                class="block px-4 py-2 hover:bg-gray-100">Prestasi & Inovasi</a></li>
+        <li><a href="{{ route('profile.legal-basis') }}"
+               class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/dasar-hukum') ? 'text-blue-600 font-semibold' : '' }}">Dasar Hukum</a></li>
+    </ul>
+    </li>
+
                 <li>
                     <a href="{{ route('services.index') }}"
                        class="{{ Request::is('layanan*') ? 'text-blue-600' : 'text-gray-700' }} hover:text-blue-600 transition">

@@ -23,6 +23,7 @@
 
     <!-- Optional: Gunakan Heroicons atau Feather Icons jika perlu ikon -->
     <link href="https://unpkg.com/feather-icons" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-white text-gray-800">
 

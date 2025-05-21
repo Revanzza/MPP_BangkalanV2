@@ -18,4 +18,16 @@ class ProfileController extends Controller
     {
         return view('pages.profiles.legal-basis.legal-basis');
     }
+    public function tugasfungsi()
+    {
+        return view('pages.profiles.tugas-fungsi.tugas-fungsi');
+    }
+    public function prestasiinovasi()
+    {
+        return view('pages.profiles.prestasi-inovasi.prestasi-inovasi');
+    }
+    public function leadership()
+    {
+        return view('pages.profiles.leadership.leadership');
+    }
 }
