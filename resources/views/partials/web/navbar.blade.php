@@ -48,13 +48,13 @@
         <li><a href="{{ route('profile.vision-mission') }}"
                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/visi-misi') ? 'text-blue-600 font-semibold' : '' }}">Visi & Misi</a></li>
         <li><a href="{{ route('profile.tugas-fungsi') }}"
-                class="block px-4 py-2 hover:bg-gray-100">Tugas & Fungsi</a></li>
+                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/tugas-fungsi') ? 'text-blue-600 font-semibold' : '' }}">Tugas & Fungsi</a></li>
         <li><a href="{{ route('profile.leadership') }}"
-                class="block px-4 py-2 hover:bg-gray-100">Profil Pimpinan</a></li>
+                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/leadership') ? 'text-blue-600 font-semibold' : '' }}">Profil Pimpinan</a></li>
         <li><a href="{{ route('profile.facilities') }}"
                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/fasilitas') ? 'text-blue-600 font-semibold' : '' }}">Sarana & Prasarana</a></li>
         <li><a href="{{ route('profile.prestasi-inovasi') }}"
-                class="block px-4 py-2 hover:bg-gray-100">Prestasi & Inovasi</a></li>
+                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/prestasi-inovasi') ? 'text-blue-600 font-semibold' : '' }}">Prestasi & Inovasi</a></li>
         <li><a href="{{ route('profile.legal-basis') }}"
                class="block px-4 py-2 hover:bg-gray-100 {{ Request::is('profil/dasar-hukum') ? 'text-blue-600 font-semibold' : '' }}">Dasar Hukum</a></li>
     </ul>
