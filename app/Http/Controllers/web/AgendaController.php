@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Agenda;
 
 class AgendaController extends Controller
 {
@@ -11,8 +12,8 @@ class AgendaController extends Controller
         return view('pages.agenda.agenda');
     }
 
-    public function show($id)
+    public function show(Agenda $agenda)
     {
-        return view('pages.agenda.show');
+        return view('pages.agenda.show', compact('agenda'));
     }
 }
