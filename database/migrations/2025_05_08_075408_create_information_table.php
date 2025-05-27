@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->string('judul');
+            $table->string('slug')->unique();
             $table->text('isi');
             $table->string('foto_information')->nullable();
             $table->string('kategori')->nullable();

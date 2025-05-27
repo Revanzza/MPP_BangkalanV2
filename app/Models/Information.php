@@ -14,6 +14,7 @@ class Information extends Model
     protected $fillable = [
         'id_user',
         'judul',
+        'slug',
         'isi',
         'foto_information',
         'kategori',
@@ -30,6 +31,12 @@ class Information extends Model
 
         static::creating(function ($model) {
             $model->id_user = auth()->id(); // Auto-set user yang login
+            $model->slug = \Str::slug($model->judul) . '-' . uniqid();
         });
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
