@@ -9,11 +9,13 @@ class AgendaController extends Controller
 {
     public function index()
     {
-        return view('pages.agenda.agenda');
+        $agendas = Agenda::latest()->get();
+        return view('pages.agenda.agenda', compact('agendas'));
     }
 
-    public function show(Agenda $agenda)
+    public function show($slug)
     {
+        $agenda = Agenda::where('slug', $slug)->firstOrFail();
         return view('pages.agenda.show', compact('agenda'));
     }
 }

@@ -23,7 +23,9 @@
 </div>
 
 <!-- Agenda List Section -->
-<div class="container py-12">
-    <!-- Konten agenda list -->
+<div class="container py-12 flex justify-center">
+    <div class="w-full max-w-5xl">
+        <x-agenda.agenda-index :agendas="$agendas" />
+    </div>
 </div>
 @endsection
