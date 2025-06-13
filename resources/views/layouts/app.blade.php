@@ -9,20 +9,10 @@
     <link rel="icon" href="/icons/icon-mpp.ico" type="image/x-icon">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
 
     <!-- Optional: Tailwind Config (untuk kustomisasi) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0d6efd', // Contoh jika ingin menyesuaikan warna utama
-                    }
-                }
-            }
-        }
-    </script>
+
 
     <!-- Optional: Gunakan Heroicons atau Feather Icons jika perlu ikon -->
     <link href="https://unpkg.com/feather-icons" rel="stylesheet">
