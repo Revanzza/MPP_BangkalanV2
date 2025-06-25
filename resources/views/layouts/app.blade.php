@@ -4,21 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPP Bangkalan</title>
-
-    <!-- Favicon -->
     <link rel="icon" href="/icons/icon-mpp.ico" type="image/x-icon">
-
-    <!-- Tailwind CSS -->
     @vite('resources/css/app.css')
-
-    <!-- Optional: Tailwind Config (untuk kustomisasi) -->
-
-
-    <!-- Optional: Gunakan Heroicons atau Feather Icons jika perlu ikon -->
-    <link href="https://unpkg.com/feather-icons" rel="stylesheet">
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- ...script/icon lain jika perlu... -->
 </head>
-<body class="bg-white text-gray-800">
+<body class="text-gray-800 bg-white">
 
     @include('partials.web.navbar')
 

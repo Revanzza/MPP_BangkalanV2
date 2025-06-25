@@ -44,9 +44,9 @@
                         <a href="{{ route('agenda.show', $agenda->slug) }}" class="text-lg font-semibold text-blue-800 hover:underline">
                             {{ $agenda->nama_agenda }}
                         </a>
-                        <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        <div class="text-gray-600 text-sm mt-2 line-clamp-2">
                             {!! $agenda->deskripsi !!}
-                        </p>
+                        </div>
                     </div>
                     <div class="text-right mt-4">
                         <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center text-sm border border-blue-800 text-blue-800 px-4 py-2 rounded hover:bg-blue-800 hover:text-white transition">
