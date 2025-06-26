@@ -21,7 +21,7 @@ Route::get('/profil/prestasi-inovasi', [ProfileController::class, 'prestasiinova
 Route::get('/profil/leadership', [ProfileController::class, 'leadership'])->name('profile.leadership');
 
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
-Route::get('/agenda/{id}', [AgendaController::class, 'show'])->name('agenda.show');
+Route::get('/agenda/{slug}', [AgendaController::class, 'show'])->name('agenda.show');
 
 Route::get('/informasi', [InformationController::class, 'index'])->name('informations.index');
 Route::get('/informasi/{id}', [InformationController::class, 'show'])->name('informations.show');
