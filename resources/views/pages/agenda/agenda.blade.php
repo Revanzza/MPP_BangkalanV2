@@ -23,8 +23,8 @@
 </div>
 
 <!-- Agenda List Section -->
-<div class="container flex justify-center py-12">
-    <div class="w-full max-w-5xl">
+<div class="flex justify-center py-12">
+    <div class="w-full max-w-5xl px-4">
         <x-agenda.agenda-index :agendas="$agendas" />
     </div>
 </div>

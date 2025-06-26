@@ -1,21 +1,21 @@
 <!-- resources/views/components/agenda-index.blade.php -->
-<div class="container mx-auto py-10 px-4">
+<div class="container px-4 py-10 mx-auto">
 
     <div class="space-y-6">
         @forelse ($agendas as $agenda)
-        <div class="bg-white rounded-lg shadow hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+        <div class="overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow hover:shadow-md hover:-translate-y-1">
             <div class="md:flex">
                 <div class="md:w-1/3">
                     <a href="{{ route('agenda.show', $agenda->slug) }}">
                         <img src="{{ $agenda->foto_agenda ? asset('storage/' . $agenda->foto_agenda) : asset('images/default.jpg') }}"
                              alt="{{ $agenda->nama_agenda }}"
-                             class="w-full h-52 object-cover">
+                             class="object-cover w-full h-52">
                     </a>
                 </div>
-                <div class="md:w-2/3 p-5 flex flex-col justify-between">
+                <div class="flex flex-col justify-between p-5 md:w-2/3">
                     <div>
-                        <p class="text-sm text-gray-500 mb-2 flex items-center gap-4">
-                            <div class="flex items-center text-sm text-gray-500 space-x-3">
+                        <p class="flex items-center gap-4 mb-2 text-sm text-gray-500">
+                            <div class="flex items-center space-x-3 text-sm text-gray-500">
                                 <!-- Kalender + Tanggal -->
                                 <div class="flex items-center space-x-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -44,12 +44,12 @@
                         <a href="{{ route('agenda.show', $agenda->slug) }}" class="text-lg font-semibold text-blue-800 hover:underline">
                             {{ $agenda->nama_agenda }}
                         </a>
-                        <div class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        <div class="mt-2 text-sm text-gray-600 line-clamp-2">
                             {!! $agenda->deskripsi !!}
                         </div>
                     </div>
-                    <div class="text-right mt-4">
-                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center text-sm border border-blue-800 text-blue-800 px-4 py-2 rounded hover:bg-blue-800 hover:text-white transition">
+                    <div class="mt-4 text-right">
+                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center px-4 py-2 text-sm text-blue-800 transition border border-blue-800 rounded hover:bg-blue-800 hover:text-white">
                             Learn More
                             <!-- Arrow Right Icon -->
                             <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,16 +63,11 @@
         @empty
         <p class="text-gray-600">Belum ada agenda tersedia.</p>
         @endforelse
+
+        {{-- Pagination --}}
+        <div class="flex justify-center mt-8">
+            {{ $agendas->links('vendor.pagination.tailwind') }}
+        </div>
     </div>
 
-    @if ($agendas->count())
-    <div class="text-center mt-8">
-        <a href="{{ route('agenda.index') }}" class="inline-flex items-center border border-blue-800 text-blue-800 px-5 py-2 rounded hover:bg-blue-800 hover:text-white transition">
-            View More
-            <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
-            </svg>
-        </a>
-    </div>
-    @endif
 </div>

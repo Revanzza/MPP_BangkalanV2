@@ -9,7 +9,8 @@ class AgendaController extends Controller
 {
     public function index()
     {
-        $agendas = Agenda::latest()->get();
+
+        $agendas = Agenda::latest()->paginate(5); // 5 per halaman
         return view('pages.agenda.agenda', compact('agendas'));
     }
 
