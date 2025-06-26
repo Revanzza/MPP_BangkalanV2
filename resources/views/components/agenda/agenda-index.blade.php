@@ -45,7 +45,7 @@
                             {{ $agenda->nama_agenda }}
                         </a>
                         <div class="mt-2 text-sm text-gray-600 line-clamp-2">
-                            {!! $agenda->deskripsi !!}
+                            {!! modifyContent($agenda->deskripsi) !!}
                         </div>
                     </div>
                     <div class="mt-4 text-right">
