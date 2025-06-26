@@ -17,6 +17,11 @@ class AgendaController extends Controller
     public function show($slug)
     {
         $agenda = Agenda::where('slug', $slug)->firstOrFail();
-        return view('pages.agenda.show', compact('agenda'));
+        $relatedAgendas = Agenda::where('id', '!=', $agenda->id)
+        ->latest()
+        ->take(3)
+        ->get();
+
+        return view('pages.agenda.show', compact('agenda', 'relatedAgendas'));
     }
 }

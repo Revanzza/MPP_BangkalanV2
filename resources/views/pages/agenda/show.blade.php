@@ -59,19 +59,23 @@
                     </div>
                 </div>
 
-                <!-- Related Agendas (Dummy Loop, ganti dengan data asli jika ada) -->
+                <!-- Related Agendas -->
                 <div class="p-4 bg-white rounded-lg shadow">
                     <h6 class="font-bold mb-3 text-[#0056b3]">Agenda Lainnya</h6>
                     <div class="flex flex-col gap-3">
-                        @for ($i = 1; $i <= 4; $i++)
+                        @forelse ($relatedAgendas as $item)
                         <div class="flex overflow-hidden rounded shadow-sm bg-gray-50">
-                            <img src="{{ asset('storage/banners/berita2.jpg') }}" class="object-cover w-20 h-20" alt="Agenda Thumbnail">
+                            <img src="{{ $item->foto_agenda ? asset('storage/' . $item->foto_agenda) : asset('images/default.jpg') }}" class="object-cover w-20 h-20" alt="Agenda Thumbnail">
                             <div class="flex flex-col justify-center px-3 py-2">
-                                <p class="mb-1 text-sm font-semibold">Diskominfo Bangkalan Gelar Bimtek Penguatan Implementasi PPID</p>
-                                <a href="#" class="flex items-center gap-1 text-xs font-semibold text-blue-700 hover:underline">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                                <p class="mb-1 text-sm font-semibold line-clamp-2">{{ $item->nama_agenda }}</p>
+                                <a href="{{ route('agenda.show', $item->slug) }}" class="flex items-center gap-1 text-xs font-semibold text-blue-700 hover:underline">
+                                    Selengkapnya <i class="bi bi-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
-                        @endfor
+                        @empty
+                        <p class="text-sm text-gray-500">Tidak ada agenda lain.</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
