@@ -36,7 +36,7 @@
                     </div>
                     <div class="prose text-gray-800 max-w-none">
                         @if($agenda->foto_agenda)
-                            <img src="{{ asset('storage/' . $agenda->foto_agenda) }}" alt="Foto Agenda" class="object-cover w-full mb-4 rounded shadow max-h-96">
+                            <img src="{{ asset('storage/' . $agenda->foto_agenda) }}" alt="Foto Agenda" class="object-cover w-full mb-4 rounded shadow ">
                             <h2 class="mt-2 mb-4 text-xl font-bold text-[#17191c]">{{ $agenda->nama_agenda }}</h2>
                         @endif
                         {!! modifyContent($agenda->deskripsi) !!}
