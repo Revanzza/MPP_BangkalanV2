@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPP Bangkalan</title>
     <link rel="icon" href="/icons/icon-mpp.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     @vite('resources/css/app.css')
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- ...script/icon lain jika perlu... -->
 </head>
 <body class="text-gray-800 bg-white">

@@ -1,6 +1,6 @@
 <!-- Information List Section -->
 <div class="container py-8 mx-auto">
-    <h2 class="mb-6 font-bold text-2xl text-[#0056b3]">INFORMASI TERBARU</h2>
+    <h2 class="mb-6 font-bold text-2xl text-[#1E90FF]">INFORMASI TERBARU</h2>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($informations as $info)
         <div class="flex flex-col transition-transform duration-300 bg-white rounded-lg shadow hover:-translate-y-1">
@@ -16,16 +16,16 @@
                     {{ $info->kategori ?? 'Informasi Diskominfo' }}
                 </p>
                 <a href="{{ route('informations.show', $info->slug) }}" class="no-underline hover:underline">
-                    <h3 class="font-bold text-lg text-[#0056b3] mb-2">
+                    <h3 class="font-bold text-lg text-[#1E90FF] mb-2">
                         {{ $info->judul }}
                     </h3>
                 </a>
-                <p class="mb-4 overflow-hidden text-sm text-gray-600 line-clamp-3">
-                    {!! \Illuminate\Support\Str::limit(strip_tags($info->isi), 150) !!}
+                <p class="mb-4 text-sm text-gray-600">
+                    {!! \Illuminate\Support\Str::limit(strip_tags($info->isi), 100) !!}
                 </p>
                 <div class="flex items-center gap-2 mt-auto">
                     <img src="{{ asset('images/mpp-bangkalan.png') }}" alt="Logo MPP" class="w-8 h-8">
-                    <span class="text-xs font-semibold text-[#0056b3]">MAL PELAYANAN PUBLIK KABUPATEN BANGKALAN</span>
+                    <span class="text-xs font-semibold text-[#1E90FF]">MAL PELAYANAN PUBLIK KABUPATEN BANGKALAN</span>
                 </div>
             </div>
         </div>

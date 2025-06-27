@@ -41,7 +41,7 @@
                             </div>
 
                         </p>
-                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="text-lg font-semibold text-blue-800 hover:underline">
+                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="text-lg font-semibold text-[#1E90FF] hover:underline">
                             {{ $agenda->nama_agenda }}
                         </a>
                         <div class="mt-2 text-sm text-gray-600 line-clamp-2">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-right">
-                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center px-4 py-2 text-sm text-blue-800 transition border border-blue-800 rounded hover:bg-blue-800 hover:text-white">
+                        <a href="{{ route('agenda.show', $agenda->slug) }}" class="inline-flex items-center px-4 py-2 text-sm text-blue-600 transition border border-blue-600 rounded hover:bg-blue-600 hover:text-white">
                             Learn More
                             <!-- Arrow Right Icon -->
                             <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

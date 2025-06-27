@@ -27,6 +27,7 @@ Route::get('/informasi', [InformationController::class, 'index'])->name('informa
 Route::get('/informasi/{id}', [InformationController::class, 'show'])->name('informations.show');
 
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/layanan/{id}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/layanan/{slug}', [ServiceController::class, 'instansi'])->name('services.instansi');
+
 
 Route::get('/jam-operasional', [YourController::class, 'showOperationalHours']);

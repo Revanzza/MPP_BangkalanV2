@@ -36,7 +36,7 @@
                     </div>
                     <div class="prose text-gray-800 max-w-none">
                         @if($information->foto_information)
-                            <img src="{{ asset('storage/' . $information->foto_information) }}" alt="Foto Informasi" class="object-contain w-full mb-4 rounded shadow">
+                            <img src="{{ asset('storage/' . $information->foto_information) }}" alt="Foto Informasi" class="object-cover w-full mb-4 rounded shadow max-h-96">
                             <h2 class="mt-2 mb-4 text-xl font-bold text-[#17191c]">{{ $information->judul }}</h2>
                         @endif
                         {!! modifyContent($information->isi) !!}
