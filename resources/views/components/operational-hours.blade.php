@@ -1,6 +1,6 @@
 <section class="py-10">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold text-blue-600">JAM OPERASIONAL</h2>
+        <h2 class="text-4xl font-bold text-[#1E90FF]">JAM OPERASIONAL</h2>
         <p class="text-gray-600">Jam operasional dapat berubah sewaktu-waktu</p>
 
         <div class="flex flex-col md:flex-row items-center mt-6">
@@ -15,7 +15,7 @@
                     <div class="w-48 p-4 rounded shadow transition-all duration-300 ease-in-out
                         {{ 
                             strtolower($hour->day) === strtolower($today) && $hour->is_closed == 0 ? 'bg-red-600 text-white' : (
-                            strtolower($hour->day) === strtolower($today) ? 'bg-blue-800 text-white' : (
+                            strtolower($hour->day) === strtolower($today) ? 'bg-[#1E90FF] text-white' : (
                             $hour->is_closed == 0 ? 'border border-red-500 text-red-500 bg-white' : 'bg-white hover:bg-blue-100'
                             ))
                         }}

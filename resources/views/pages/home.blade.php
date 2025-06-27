@@ -7,7 +7,7 @@
     <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold">SELAMAT DATANG</h1>
         <h2 class="text-2xl text-gray-600">DI MAL PELAYANAN PUBLIK</h2>
-        <div class="inline-block bg-blue-600 text-white px-4 py-1 mt-4 rounded">
+        <div class="inline-block bg-[#1E90FF] text-white px-4 py-1 mt-4 rounded">
             <p class="mb-0">Kabupaten Bangkalan</p>
         </div>
         <p class="text-gray-600 mt-4">
@@ -15,19 +15,19 @@
         </p>
         <img src="{{ asset('images/mpp-building.jpg') }}" alt="MPP Building" class="w-full my-6 rounded">
         <div class="flex flex-wrap gap-4 mt-4">
-            <a href="mailto:dpmptsp@bangkalankab.go.id" class="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-100">dpmptsp@bangkalankab.go.id</a>
-            <a href="tel:089980861166" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">089980861166</a>
+            <a href="mailto:dpmptsp@bangkalankab.go.id" class="border border-[#1E90FF] text-[#1E90FF] px-4 py-2 rounded hover:bg-blue-100">dpmptsp@bangkalankab.go.id</a>
+            <a href="tel:089980861166" class="bg-[#1E90FF] text-white px-4 py-2 rounded hover:bg-blue-700">089980861166</a>
         </div>
     </div>
 </section>
 
 <!-<!-- About MPP Section -->
-<section class="py-10 bg-blue-600">
+<section class="py-10 bg-[#1E90FF]">
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold text-center text-white">TENTANG MPP</h2>
         
         <div class="bg-white p-6 rounded-lg mt-6 max-w-3xl mx-auto">
-            <p class="text-center text-blue-600">
+            <p class="text-center text-[#1E90FF]">
                 MPP Bangkalan merupakan salah satu upaya Pemerintah Kabupaten Bangkalan untuk meningkatkan kualitas dan standar pelayanan publik kepada masyarakat.
                 MPP Bangkalan telah beroperasi sejak tahun 2020, namun baru tahun 2023 ini dinyatakan layak untuk diresmikan setelah memenuhi kriteria yang ditetapkan oleh Kementerian PANRB.
                 MPP Bangkalan menawarkan kemudahan, kecepatan, keterjangkauan, keamanan dan kenyamanan kepada masyarakat dalam mendapatkan pelayanan publik. Saat ini, terdapat 105 jenis produk layanan yang disediakan oleh 13 instansi pemerintah, baik pusat maupun daerah, yang telah bergabung di MPP Bangkalan.
@@ -40,7 +40,7 @@
                 <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mx-auto">
                     <!-- Heroicon: Light Bulb -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke-width="1.8" stroke="currentColor" class="w-8 h-8 text-blue-600">
+                        stroke-width="1.8" stroke="currentColor" class="w-8 h-8 text-[#1E90FF]">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>

@@ -3,18 +3,18 @@
 @section('content')
 <div class="w-full">
     <!-- Header Section -->
-    <div class="relative overflow-hidden bg-blue-600 text-white h-[280px]">
+    <div class="relative overflow-hidden bg-[#1E90FF] text-white h-[280px]">
         <!-- Dot Pattern Overlay -->
         <div class="absolute inset-0">
-            <img src="{{ asset('images/efek.png') }}" alt="Pattern" class="w-full h-full object-cover opacity-20">
+            <img src="{{ asset('images/efek.png') }}" alt="Pattern" class="object-cover w-full h-full opacity-20">
         </div>
 
         <!-- Content Container -->
-        <div class="container mx-auto relative h-full flex items-center">
+        <div class="container relative flex items-center h-full mx-auto">
             <div>
-                <h1 class="text-white font-bold text-4xl mb-3">SARANA & PRASARANA</h1>
-                <p class="uppercase text-white mb-4 tracking-wide">MAL PELAYANAN PUBLIK KABUPATEN BANGKALAN</p>
-                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 bg-white text-blue-800 px-4 py-2 rounded transition hover:bg-gray-200">
+                <h1 class="mb-3 text-4xl font-bold text-white">SARANA & PRASARANA</h1>
+                <p class="mb-4 tracking-wide text-white uppercase">MAL PELAYANAN PUBLIK KABUPATEN BANGKALAN</p>
+                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 bg-white text-[#1E90FF] px-4 py-2 rounded transition hover:bg-gray-200">
                     <i class="bi bi-house-fill"></i>
                     <span>Beranda</span>
                 </a>
@@ -24,7 +24,7 @@
 
     <!-- Facilities Grid Section -->
     <div class="container mx-auto mt-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             @php
                 $fasilitas = [
                     ['img' => 'RuangTunggu.jpg', 'title' => 'Ruang Tunggu'],
@@ -47,10 +47,10 @@
             @endphp
 
             @foreach ($fasilitas as $item)
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:bg-yellow-300 hover:border-yellow-200 border-2 border-transparent">
-                    <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover">
+                <div class="overflow-hidden transition-transform duration-300 bg-white border-2 border-transparent rounded-lg shadow-md hover:-translate-y-1 hover:bg-yellow-300 hover:border-yellow-200">
+                    <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['title'] }}" class="object-cover w-full h-48">
                     <div class="p-4 text-center">
-                        <h5 class="uppercase text-lg font-semibold text-blue-900 group-hover:text-blue-800">{{ $item['title'] }}</h5>
+                        <h5 class="uppercase text-lg font-semibold text-[#1E90FF] group-hover:text-[#1E90FF]">{{ $item['title'] }}</h5>
                     </div>
                 </div>
             @endforeach
