@@ -31,3 +31,6 @@ Route::get('/layanan/{slug}', [ServiceController::class, 'instansi'])->name('ser
 
 
 Route::get('/jam-operasional', [YourController::class, 'showOperationalHours']);
+
+Route::post('/antrean/store', [AntreanController::class, 'store'])->name('antrean.store');
+
