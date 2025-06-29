@@ -31,6 +31,7 @@
     <div id="antreanFormContainer" class="hidden mb-8">
         <form method="POST" action="{{ route('antrean.store') }}" class="max-w-lg p-5 mx-auto space-y-4 bg-white rounded-lg shadow-md">
             @csrf
+            <input type="hidden" name="institution_id" value="{{ $instansi->id }}">
             <div>
                 <label for="nama" class="block mb-1 text-sm font-medium text-gray-700">Nama Lengkap</label>
                 <input type="text" name="nama" id="nama" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
@@ -44,8 +45,8 @@
                 <input type="text" name="no_hp" id="no_hp" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
             </div>
             <div>
-                <label for="service_id" class="block mb-1 text-sm font-medium text-gray-700">Layanan</label>
-                <select name="service_id" id="service_id" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+                <label for="id_service" class="block mb-1 text-sm font-medium text-gray-700">Layanan</label>
+                <select name="id_service" id="id_service" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
                     <option value="">Pilih Layanan</option>
                     @foreach($instansi->services as $layanan)
                         <option value="{{ $layanan->id }}" style="color:#222;">{{ $layanan->nama_layanan }}</option>
@@ -60,6 +61,11 @@
                 <button type="submit" class="px-6 py-2 bg-[#1E90FF] text-white font-bold rounded hover:bg-[#007acc] focus:outline-none">Daftar</button>
             </div>
         </form>
+        @if(session('success'))
+            <script>
+                alert("{{ session('success') }}");
+            </script>
+        @endif
     </div>
 
     <div class="space-y-4">
