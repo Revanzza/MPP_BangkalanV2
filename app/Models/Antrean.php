@@ -11,9 +11,13 @@ class Antrean extends Model
 
     protected $fillable = [
         'id_service',
+        'institution_id',
         'nama',
         'nik',
+        'no_hp',
+        'tanggal',
         'nomer_antrean',
+        'status',
     ];
 
     public function service()
