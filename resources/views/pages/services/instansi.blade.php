@@ -17,12 +17,69 @@
     </div>
 </div>
 
+
 <!-- Daftar Layanan Instansi -->
 <div class="max-w-4xl mx-auto mt-10">
-    <h2 class="text-lg font-semibold text-[#1E90FF] mb-4 text-center">Daftar Layanan</h2>
-    @foreach($instansi->services as $layanan)
-        <x-services.layanan-card :layanan="$layanan" :loop="$loop" />
-    @endforeach
+    <h2 class="text-lg font-semibold text-[#1E90FF] mb-6 text-center">Daftar Layanan</h2>
+
+    <!-- Button to show form -->
+    <div class="flex justify-center mb-6">
+        <button id="showAntreanFormBtn" class="px-6 py-2 bg-[#1E90FF] text-white font-bold rounded hover:bg-[#007acc] focus:outline-none">Form Daftar Antrian</button>
+    </div>
+
+    <!-- Antrean Form (hidden by default, hardcoded) -->
+    <div id="antreanFormContainer" class="hidden mb-8">
+        <form method="POST" action="{{ route('antrean.store') }}" class="max-w-lg p-5 mx-auto space-y-4 bg-white rounded-lg shadow-md">
+            @csrf
+            <div>
+                <label for="nama" class="block mb-1 text-sm font-medium text-gray-700">Nama Lengkap</label>
+                <input type="text" name="nama" id="nama" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+            </div>
+            <div>
+                <label for="nik" class="block mb-1 text-sm font-medium text-gray-700">NIK</label>
+                <input type="text" name="nik" id="nik" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+            </div>
+            <div>
+                <label for="no_hp" class="block mb-1 text-sm font-medium text-gray-700">No. HP</label>
+                <input type="text" name="no_hp" id="no_hp" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+            </div>
+            <div>
+                <label for="service_id" class="block mb-1 text-sm font-medium text-gray-700">Layanan</label>
+                <select name="service_id" id="service_id" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+                    <option value="">Pilih Layanan</option>
+                    @foreach($instansi->services as $layanan)
+                        <option value="{{ $layanan->id }}" style="color:#222;">{{ $layanan->nama_layanan }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div>
+                <label for="tanggal" class="block mb-1 text-sm font-medium text-gray-700">Tanggal</label>
+                <input type="date" name="tanggal" id="tanggal" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#1E90FF] focus:border-[#1E90FF] px-3 py-2" required>
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="px-6 py-2 bg-[#1E90FF] text-white font-bold rounded hover:bg-[#007acc] focus:outline-none">Daftar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="space-y-4">
+        @foreach($instansi->services as $layanan)
+            <x-services.layanan-card :layanan="$layanan" :loop="$loop" />
+        @endforeach
+    </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('showAntreanFormBtn');
+        var form = document.getElementById('antreanFormContainer');
+        if(btn && form) {
+            btn.addEventListener('click', function() {
+                form.classList.toggle('hidden');
+                form.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+</script>
 
 @endsection
