@@ -3,14 +3,14 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="bg-gray-100 py-10">
-    <div class="container mx-auto px-4">
+<section class="py-10 bg-gray-100">
+    <div class="container px-4 mx-auto">
         <h1 class="text-4xl font-bold">SELAMAT DATANG</h1>
         <h2 class="text-2xl text-gray-600">DI MAL PELAYANAN PUBLIK</h2>
         <div class="inline-block bg-[#1E90FF] text-white px-4 py-1 mt-4 rounded">
             <p class="mb-0">Kabupaten Bangkalan</p>
         </div>
-        <p class="text-gray-600 mt-4">
+        <p class="mt-4 text-gray-600">
             Bangkalan Plaza Lt. 3, Jl. Halim Perdana Kusuma, Area Sawah, Mlajah, Kec. Bangkalan, Kabupaten Bangkalan, Jawa Timur 69116
         </p>
         <img src="{{ asset('images/mpp-building.jpg') }}" alt="MPP Building" class="w-full my-6 rounded">
@@ -23,10 +23,10 @@
 
 <!-<!-- About MPP Section -->
 <section class="py-10 bg-[#1E90FF]">
-    <div class="container mx-auto px-4">
+    <div class="container px-4 mx-auto">
         <h2 class="text-4xl font-bold text-center text-white">TENTANG MPP</h2>
         
-        <div class="bg-white p-6 rounded-lg mt-6 max-w-3xl mx-auto">
+        <div class="max-w-3xl p-6 mx-auto mt-6 bg-white rounded-lg">
             <p class="text-center text-[#1E90FF]">
                 MPP Bangkalan merupakan salah satu upaya Pemerintah Kabupaten Bangkalan untuk meningkatkan kualitas dan standar pelayanan publik kepada masyarakat.
                 MPP Bangkalan telah beroperasi sejak tahun 2020, namun baru tahun 2023 ini dinyatakan layak untuk diresmikan setelah memenuhi kriteria yang ditetapkan oleh Kementerian PANRB.
@@ -36,8 +36,8 @@
 
         <!-- Icons Section -->
         <div class="flex flex-wrap justify-center gap-10 mt-10">
-            <div class="text-center w-40">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mx-auto">
+            <div class="w-40 text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white rounded-full shadow">
                     <!-- Heroicon: Light Bulb -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.8" stroke="currentColor" class="w-8 h-8 text-[#1E90FF]">
@@ -45,11 +45,11 @@
                             d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
                 </div>
-                <p class="text-white font-bold mt-3">Transparansi Pelayanan</p>
+                <p class="mt-3 font-bold text-white">Transparansi Pelayanan</p>
             </div>
 
-            <div class="text-center w-40">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mx-auto">
+            <div class="w-40 text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white rounded-full shadow">
                     <!-- Heroicon: Users -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
                         stroke-width="1.8" stroke="currentColor" class="w-8 h-8 text-blue-600">
@@ -58,11 +58,11 @@
                     </svg>
 
                 </div>
-                <p class="text-white font-bold mt-3">Kenyamanan Pelayanan</p>
+                <p class="mt-3 font-bold text-white">Kenyamanan Pelayanan</p>
             </div>
 
-            <div class="text-center w-40">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mx-auto">
+            <div class="w-40 text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white rounded-full shadow">
                     <!-- Heroicon: Adjustments / Funnel -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
                         stroke-width="1.8" stroke="currentColor" class="w-8 h-8 text-blue-600">
@@ -70,7 +70,7 @@
                             d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
                     </svg>
                 </div>
-                <p class="text-white font-bold mt-3">Efisiensi Pelayanan</p>
+                <p class="mt-3 font-bold text-white">Efisiensi Pelayanan</p>
             </div>
         </div>
     </div>
@@ -78,5 +78,7 @@
 
 
 @include('components.operational-hours', ['hours' => $hours, 'today' => $today])
+
+
 
 @endsection
