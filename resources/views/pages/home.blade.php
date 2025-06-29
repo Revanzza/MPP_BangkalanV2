@@ -81,7 +81,6 @@
 @include('components.operational-hours', ['hours' => $hours, 'today' => $today])
 
 
-<!-- Institusi Layanan Section -->
 <section class="py-10 bg-white">
     <div class="container px-4 mx-auto">
         <h2 class="text-3xl font-bold text-center text-[#1E90FF] mb-10">INSTITUSI LAYANAN</h2>
@@ -101,6 +100,14 @@
             <a href="{{ route('informations.index') }}" class="px-4 py-2 text-sm font-bold text-[#1E90FF] border border-[#1E90FF] rounded hover:bg-[#1E90FF] hover:text-white transition-all">LIHAT SEMUA INFORMASI &rarr;</a>
         </div>
         <x-information.information-index :informations="$informations" />
+    </div>
+</section>
+
+<!-- Agenda Section -->
+<section class="py-10 bg-white">
+    <div class="container px-4 mx-auto">
+        <h2 class="text-3xl font-bold text-[#1E90FF] mb-4">AGENDA KEGIATAN</h2>
+        <x-agenda.agenda-index :agendas="$agendas" />
     </div>
 </section>
 

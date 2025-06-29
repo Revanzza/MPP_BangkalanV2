@@ -23,10 +23,14 @@ class HomeController extends Controller
         $institutions = Institution::all();
 
 
+
         // Ambil 6 informasi terbaru untuk ditampilkan di home, gunakan paginate agar bisa pakai ->links()
         $informations = \App\Models\Information::orderBy('created_at', 'desc')->paginate(6);
 
+        // Ambil 3 agenda terbaru untuk ditampilkan di home, gunakan paginate agar bisa pakai ->links()
+        $agendas = \App\Models\Agenda::orderBy('created_at', 'desc')->paginate(3);
+
         // Kirim ke view
-        return view('pages.home', compact('hours', 'today', 'institutions', 'informations'));
+        return view('pages.home', compact('hours', 'today', 'institutions', 'informations', 'agendas'));
     }
 }
