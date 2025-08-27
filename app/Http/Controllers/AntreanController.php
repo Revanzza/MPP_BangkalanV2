@@ -10,6 +10,11 @@ class AntreanController extends Controller
 {
     public function store(Request $request)
     {
+        // Cek status antrean online
+        $setting = \App\Models\Setting::first();
+        if ($setting && !$setting->queue_enabled) {
+            return view('antrean.offline');
+        }
 
         $request->validate([
             'institution_id' => 'required|exists:institutions,id',
