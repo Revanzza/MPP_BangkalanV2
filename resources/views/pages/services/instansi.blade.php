@@ -73,6 +73,30 @@
             <x-services.layanan-card :layanan="$layanan" :loop="$loop" />
         @endforeach
     </div>
+
+    <!-- Informasi Instansi (tulisan di bawah layanan) -->
+    <div class="mt-8 text-sm text-gray-700">
+        <div class="mb-1">
+            <span class="font-semibold text-[#1E90FF]">Website:</span>
+            @if($instansi->website_institution && $instansi->website_institution != '-')
+                <a href="{{ $instansi->website_institution }}" target="_blank" class="text-blue-600 underline">{{ $instansi->website_institution }}</a>
+            @else
+                <span class="italic text-gray-400">Belum tersedia</span>
+            @endif
+        </div>
+        <div class="mb-1">
+            <span class="font-semibold text-[#1E90FF]">Alamat:</span>
+            {{ $instansi->alamat_institution ?? '-' }}
+        </div>
+        <div>
+            <span class="font-semibold text-[#1E90FF]">Nomor Instansi:</span>
+            @if($instansi->no_institution && $instansi->no_institution != '-' && $instansi->no_institution != 'NULL')
+                {{ $instansi->no_institution }}
+            @else
+                <span class="italic text-gray-400">Belum tersedia</span>
+            @endif
+        </div>
+    </div>
 </div>
 
 <script>
