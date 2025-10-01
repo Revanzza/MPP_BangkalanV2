@@ -20,6 +20,8 @@ class InformationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
+    protected static ?string $navigationLabel = 'Informasi Berita';
+
     public static function form(Form $form): Form
     {
         return $form
