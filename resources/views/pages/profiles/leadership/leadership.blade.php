@@ -43,11 +43,11 @@
                     <div class="md:w-2/5 bg-gradient-to-br from-[#1E90FF] to-[#1565C0] p-8 flex items-center justify-center">
                         @if($leader->photo)
                             <img src="{{ Storage::url($leader->photo) }}" 
-                                 alt="{{ $leader->name }}"
-                                 class="object-cover w-64 h-64 border-8 border-white rounded-full shadow-xl">
+                                alt="{{ $leader->name }}"
+                                class="object-cover w-48 h-64 border-8 border-white shadow-xl" style="aspect-ratio:3/4;">
                         @else
-                            <div class="flex items-center justify-center w-64 h-64 border-8 border-white rounded-full shadow-xl bg-white/20">
-                                <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <div class="flex items-center justify-center w-48 h-64 border-8 border-white shadow-xl bg-white/20" style="aspect-ratio:3/4;">
+                                <svg class="w-24 h-24 text-white" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                                 </svg>
                             </div>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Web;
-
+use App\Models\Leader;
 use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
@@ -28,6 +28,7 @@ class ProfileController extends Controller
     }
     public function leadership()
     {
-        return view('pages.profiles.leadership.leadership');
+        $leader = Leader::where('is_head', true)->first();
+        return view('pages.profiles.leadership.leadership', compact('leader'));
     }
 }
