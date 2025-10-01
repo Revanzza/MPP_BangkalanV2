@@ -16,7 +16,7 @@ class LeaderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
     
-    protected static ?string $navigationLabel = 'Kepemimpinan';
+    protected static ?string $navigationLabel = 'Pimpinan';
     
     protected static ?string $modelLabel = 'Pimpinan';
     
