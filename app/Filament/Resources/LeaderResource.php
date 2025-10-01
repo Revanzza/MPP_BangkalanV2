@@ -62,12 +62,14 @@ class LeaderResource extends Resource
                         Forms\Components\TextInput::make('email')
                             ->label('Email')
                             ->email()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->nullable(),
                         
                         Forms\Components\TextInput::make('phone')
                             ->label('Nomor Telepon')
                             ->tel()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->nullable(),
                     ])
                     ->columns(2),
 
