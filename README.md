@@ -42,14 +42,11 @@ Portal Mal Pelayanan Publik (MPP) Kabupaten Bangkalan — menampilkan agenda, in
 - /agenda
 - /information
 
-## Menambahkan kolom role ke users
-Jalankan migration untuk menambah kolom `role` (default `user`) jika belum ada.
-
 ## Kontribusi
 - Gunakan branch feature/<nama>
 - Pull request ke branch development
 - Sertakan deskripsi singkat dan screenshot bila perlu
 
 ## Kontak
-- Tim Pengembang / Nama: [Your Name]  
-- Email: your@example.com
+- Tim Pengembang / Nama: Muhammad Revanza, Desta Rizky A, Moch. Irfan Pramono 
+- Email: -
