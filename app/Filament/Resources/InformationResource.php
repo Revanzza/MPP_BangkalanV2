@@ -22,6 +22,9 @@ class InformationResource extends Resource
 
     protected static ?string $navigationLabel = 'Informasi Berita';
 
+    protected static ?string $modelLabel = 'Informasi';
+    protected static ?string $pluralModelLabel = 'Data Informasi';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -45,7 +48,7 @@ class InformationResource extends Resource
                 ->columnSpanFull(),
                 Forms\Components\TextInput::make('kategori')
                 ->required(),
-                Forms\Components\FileUpload::make('foto_information')  
+                Forms\Components\FileUpload::make('foto_informasi')  
                 ->required(),
             ]);
     }
