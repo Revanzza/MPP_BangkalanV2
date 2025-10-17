@@ -21,17 +21,20 @@ class InstitutionResource extends Resource
 
     protected static ?string $navigationLabel = 'Instansi';
 
+    protected static ?string $modelLabel = 'Instansi';
+    protected static ?string $pluralModelLabel = 'Data Instansi';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama_institution')  
+                Forms\Components\TextInput::make('nama_instansi')  
                 ->required(),
-                Forms\Components\TextInput::make('alamat_institution')  
+                Forms\Components\TextInput::make('alamat_instansi')  
                 ->required(),
-                Forms\Components\TextInput::make('website_institution'),
-                Forms\Components\TextInput::make('no_institution'), 
-                Forms\Components\FileUpload::make('logo_institution')  
+                Forms\Components\TextInput::make('website_instansi'),
+                Forms\Components\TextInput::make('no_instansi'), 
+                Forms\Components\FileUpload::make('logo_instansi')  
                 ->required(),
             ]);
     }
