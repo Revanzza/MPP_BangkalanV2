@@ -37,7 +37,7 @@ class OperationalHourResource extends Resource
                 Forms\Components\TextInput::make('Jam_Tutup')
                 ->required(),
                 Toggle::make('is_closed')
-                ->label('Buka/Tutup')
+                ->label('Tutup/Buka')
                 ->default(true) 
                 ->onColor('success') 
                 ->offColor('danger') 
