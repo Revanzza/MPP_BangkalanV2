@@ -23,15 +23,18 @@ class OperationalHourResource extends Resource
 
     protected static ?string $navigationLabel = 'Jam Operasional';
 
+    protected static ?string $modelLabel = 'Jam Operasional';
+    protected static ?string $pluralModelLabel = 'Data Jam Operasional';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('day')  
+                Forms\Components\TextInput::make('Hari')  
                 ->required(),
-                Forms\Components\TextInput::make('open_time')
+                Forms\Components\TextInput::make('Jam_Buka')
                 ->required(),
-                Forms\Components\TextInput::make('close_time')
+                Forms\Components\TextInput::make('Jam_Tutup')
                 ->required(),
                 Toggle::make('is_closed')
                 ->label('Buka/Tutup')
