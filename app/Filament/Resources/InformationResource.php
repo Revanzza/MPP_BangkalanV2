@@ -48,7 +48,7 @@ class InformationResource extends Resource
                 ->columnSpanFull(),
                 Forms\Components\TextInput::make('kategori')
                 ->required(),
-                Forms\Components\FileUpload::make('foto_informasi')  
+                Forms\Components\FileUpload::make('foto_information')  
                 ->required(),
             ]);
     }
